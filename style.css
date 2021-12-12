@@ -1,0 +1,93 @@
+:root {
+  --background: #d5f7ff;
+  --font: #222;
+  --border: #333;
+  --screen: #eee;
+  --calculator: #aaa;
+  --btn: #eee;
+  --btn-hover: #ddd;
+  --btn-active: #ccc;
+  --btn-red: #faa;
+  --btn-red-hover: rgb(160, 238, 153);
+  --btn-red-active: rgb(136, 221, 207);
+  --btn-blue: #aaf;
+  --btn-blue-hover: #99e;
+  --btn-blue-active: #88d;
+}
+
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--font);
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  min-height: 500px;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.title {
+  text-align: center;
+}
+
+.calculator {
+  width: 400px;
+  border: 2px var(--border) solid;
+  padding: 20px;
+  background-color: var(--calculator);
+}
+
+.screen {
+  padding: 10px 20px;
+  border: 2px var(--border) solid;
+  margin-bottom: 20px;
+  background-color: var(--screen);
+}
+
+.screen-last {
+  min-height: 32px;
+  font-size: 20px;
+  background: rgba(206, 245, 238, 0.932);
+}
+
+.screen-current {
+  min-height: 64px;
+  font-size: 40px;
+  background: rgba(255, 213, 99, 0.801);
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+}
