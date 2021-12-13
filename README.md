@@ -11,11 +11,13 @@
 - Hidden message will be displayed when attempting to divide by zero.
 - Input two operands and the desired operator to be executed by clicking the equal button.
 
-# Possible updates
+# Possible Updates
 
 - String to gether several operations.
 - keyboard support.
 - 'Backspace' button to undo previous action.
+- +/- key added.
+- Exponent buton.
 
 # Calculator Preview
 
