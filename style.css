@@ -1,18 +1,15 @@
 :root {
-  --background: #d5f7ff;
-  --font: #222;
-  --border: #333;
-  --screen: #eee;
-  --calculator: #aaa;
-  --btn: #eee;
-  --btn-hover: #ddd;
-  --btn-active: #ccc;
-  --btn-red: #faa;
-  --btn-red-hover: rgb(160, 238, 153);
-  --btn-red-active: rgb(136, 221, 207);
-  --btn-blue: #aaf;
+  --background: #eae7dc;
+  --font: #e85a4f;
+  --border: #8e8d8a;
+  --screen: #eae7dc;
+  --calculator: #d8c3a5;
+  --btn: #eae7dc;
+  --btn-hover: #ece1ba;
+  --btn-red: #e85a4f;
+  --btn-red-hover: #ec3123;
+  --btn-blue: #98ace4;
   --btn-blue-hover: #99e;
-  --btn-blue-active: #88d;
 }
 
 html {
@@ -45,9 +42,10 @@ body {
 
 .calculator {
   width: 400px;
-  border: 2px var(--border) solid;
   padding: 20px;
   background-color: var(--calculator);
+  border: 2px var(--border) solid;
+  border-radius: 5px;
 }
 
 .screen {
@@ -56,6 +54,8 @@ body {
   margin-bottom: 20px;
   background-color: var(--screen);
   text-align: right;
+  border: 2px var(--border) solid;
+  border-radius: 5px;
 }
 
 .screen-last {
@@ -91,4 +91,53 @@ body {
   width: 100%;
   padding: 10px;
   font-size: 20px;
+}
+
+#clear-btn {
+  background: var(--btn-blue);
+}
+
+#delete-btn {
+  background: var(--btn-red);
+}
+
+.btn {
+  padding: 20px;
+  border: 2px var(--border) solid;
+  border-radius: 5px;
+  background-color: var(--btn);
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn:active {
+  background-color: #ecdda8;
+  transform: scale(0.98);
+  transition: transform 0.1s ease-in-out;
+}
+
+#clear-btn:hover {
+  background-color: var(--btn-blue-hover);
+}
+
+#delete-btn:hover {
+  background-color: var(--btn-red-hover);
+}
+
+#equal-btn:active {
+  background-color: rgb(167, 250, 171);
+  transform: scale(0.98);
+  transition: transform 0.1s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font);
+}
+
+a:hover {
+  text-decoration: underline;
 }
