@@ -1,6 +1,6 @@
 let firstOperand = ''
 let secondOperand = ''
-let currentOperation = '';
+let currentOperation = null;
 let shouldResetScreen = false
 
 const numberButton = document.querySelectorAll('.number')
@@ -40,7 +40,7 @@ function operate(operator, a, b) {
 		case '×':
 		  return multiply(a, b);
 		case '÷':
-		  if (b === 0) return null;
+		  if (b === 0) return "(ಠ_ಠ)";
 		  else return divide(a, b);
 		default:
 		  return null;
@@ -49,14 +49,14 @@ function operate(operator, a, b) {
 
 
 numberButton.forEach(function(button) {
-	button.addEventListener('click', function(){
+	button.addEventListener('click', function() {
 		appendNumber(button.textContent)
 	})
 });
 
 function appendNumber(number) {
-	if (currentOperationScreen.textContent === '0' || shouldResetScreen)
-		resetScreen()
+	if (currentOperationScreen.textContent === '0' || shouldResetScreen) 
+    resetScreen()
 	currentOperationScreen.textContent += number
 	
 }
@@ -70,15 +70,15 @@ function setOperation(operator) {
 	currentOperation = operator
 	lastOperationScreen.textContent = `${firstOperand} ${currentOperation}`
 	resetScreen();
-	currentOperationScreen.textContent = ''
+	currentOperationScreen.textContent = '';
 	shouldResetScreen = true;
 }
 
 equalButton.addEventListener('click', () => {
 	if(currentOperation === null) {
-		return currentOperationScreen.textContent = 'test';
+		return 
 	} else {
-		secondOperand = currentOperationScreen.textContent
+	secondOperand = currentOperationScreen.textContent
 	lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} = `;
 	currentOperationScreen.textContent = `${operate(currentOperation, firstOperand, secondOperand)}`;
 	}
@@ -91,14 +91,14 @@ deleteButton.addEventListener('click', deleteCurrentNumber)
 function clear() {
 	currentOperationScreen.textContent = '0';
 	lastOperationScreen.textContent = '';
-	let firstOperand = '';
-	let secondOperand = '';
-	let currentOperation = '';
-	console.log(currentOperation);
+	firstOperand = '';
+	secondOperand = '';
+	currentOperation = null;
 };
 
 function deleteCurrentNumber() {
-	currentOperationScreen.textContent = '0'
+	currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0,-1);
+
 }
  
 function resetScreen() {
