@@ -8,9 +8,12 @@ const operatorButtons = document.querySelectorAll('.operator')
 const equalButton = document.getElementById('equal-btn')
 const clearButton = document.getElementById('clear-btn')
 const deleteButton = document.getElementById('delete-btn')
+const pointButton = document.getElementById('point-btn')
 const currentOperationScreen = document.getElementById('currentOperationScreen')
 const lastOperationScreen = document.getElementById('lastOperationScreen')
 
+clearButton.addEventListener('click', clear);
+deleteButton.addEventListener('click', deleteCurrentNumber);
 
 function divide(a, b) {
 	return a / b
@@ -82,11 +85,17 @@ equalButton.addEventListener('click', () => {
 	lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} = `;
 	currentOperationScreen.textContent = `${operate(currentOperation, firstOperand, secondOperand)}`;
 	}
-	
 });
 
-clearButton.addEventListener('click', clear);
-deleteButton.addEventListener('click', deleteCurrentNumber)
+pointButton.addEventListener('click', () => {
+	if (currentOperationScreen.textContent === '0') {
+		currentOperationScreen.textContent = '0.'
+	}
+	if (currentOperationScreen.textContent.includes('.')) return
+	appendNumber('.');
+});
+
+
 
 function clear() {
 	currentOperationScreen.textContent = '0';
