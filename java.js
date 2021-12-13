@@ -17,65 +17,47 @@ deleteButton.addEventListener('click', deleteCurrentNumber);
 
 function divide(a, b) {
 	return a / b
-} ;
+};
 
 function multiply(a, b) {
 	return a * b
-} ;
+};
 
 function subtract(a, b) {
 	return a - b
-} ;
+};
 
 function add(a, b) {
 	return a + b
-} ;
-
+};
 
 function operate(operator, a, b) {
 	a = Number(a);
 	b = Number(b);
 	switch (operator) {
 		case '+':
-		  return add(a, b);
-		case '−':
-		  return subtract(a, b);
-		case '×':
-		  return multiply(a, b);
-		case '÷':
-		  if (b === 0) return "(ಠ_ಠ)";
-		  else return divide(a, b);
-		default:
-		  return null;
-	  }
-};
-
-
-numberButton.forEach(function(button) {
-	button.addEventListener('click', function() {
+			return add(a, b);
+			case '−':
+				return subtract(a, b);
+				case '×':
+					return multiply(a, b);
+					case '÷':
+						if (b === 0) return "(ಠ_ಠ)";
+						else return divide(a, b);
+						default:
+							return null;
+						}
+					};
+					
+					numberButton.forEach(function(button) {
+						button.addEventListener('click', function() {
 		appendNumber(button.textContent)
 	})
 });
 
-function appendNumber(number) {
-	if (currentOperationScreen.textContent === '0' || shouldResetScreen) 
-    resetScreen()
-	currentOperationScreen.textContent += number
-	
-}
-
 operatorButtons.forEach((button) =>
   button.addEventListener('click', () => setOperation(button.textContent))
 );
-
-function setOperation(operator) {
-	firstOperand = currentOperationScreen.textContent
-	currentOperation = operator
-	lastOperationScreen.textContent = `${firstOperand} ${currentOperation}`
-	resetScreen();
-	currentOperationScreen.textContent = '';
-	shouldResetScreen = true;
-}
 
 equalButton.addEventListener('click', () => {
 	if(currentOperation === null) {
@@ -95,7 +77,30 @@ pointButton.addEventListener('click', () => {
 	appendNumber('.');
 });
 
+function appendNumber(number) {
+	if (currentOperationScreen.textContent === '0' || shouldResetScreen) 
+    resetScreen()
+	currentOperationScreen.textContent += number
+};
 
+function setOperation(operator) {
+	firstOperand = currentOperationScreen.textContent
+	currentOperation = operator
+	lastOperationScreen.textContent = `${firstOperand} ${currentOperation}`
+	resetScreen();
+	currentOperationScreen.textContent = '';
+	shouldResetScreen = true;
+};
+
+function deleteCurrentNumber() {
+	currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0,-1);
+	if (currentOperationScreen.textContent.toString().length === 0) return currentOperationScreen.textContent = '0';
+};
+
+function resetScreen() {
+	currentOperationScreen.textContent = '';
+	shouldResetScreen = false;
+};
 
 function clear() {
 	currentOperationScreen.textContent = '0';
@@ -104,13 +109,3 @@ function clear() {
 	secondOperand = '';
 	currentOperation = null;
 };
-
-function deleteCurrentNumber() {
-	currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0,-1);
-	if (currentOperationScreen.textContent.toString().length === 0) return currentOperationScreen.textContent = '0';
-}
- 
-function resetScreen() {
-	currentOperationScreen.textContent = '';
-	shouldResetScreen = false;
- };
