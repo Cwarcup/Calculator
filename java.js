@@ -88,7 +88,7 @@ equalButton.addEventListener('click', () => {
 });
 
 pointButton.addEventListener('click', () => {
-	if (currentOperationScreen.textContent === '0') {
+	if (currentOperationScreen.textContent === '0' || currentOperationScreen.textContent === '') {
 		currentOperationScreen.textContent = '0.'
 	}
 	if (currentOperationScreen.textContent.includes('.')) return
@@ -107,7 +107,7 @@ function clear() {
 
 function deleteCurrentNumber() {
 	currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0,-1);
-
+	if (currentOperationScreen.textContent.toString().length === 0) return currentOperationScreen.textContent = '0';
 }
  
 function resetScreen() {
