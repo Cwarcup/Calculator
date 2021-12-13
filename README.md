@@ -17,4 +17,6 @@
 - keyboard support.
 - 'Backspace' button to undo previous action.
 
+# Calculator Preview
+
 ![Example Calculator](calc.png)
