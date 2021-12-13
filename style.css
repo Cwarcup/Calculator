@@ -55,18 +55,19 @@ body {
   border: 2px var(--border) solid;
   margin-bottom: 20px;
   background-color: var(--screen);
+  text-align: right;
 }
 
 .screen-last {
   min-height: 32px;
   font-size: 20px;
-  background: rgba(206, 245, 238, 0.932);
+  background: var(--screen);
 }
 
 .screen-current {
   min-height: 64px;
   font-size: 40px;
-  background: rgba(255, 213, 99, 0.801);
+  background: var(--screen);
 }
 
 .buttons-grid {
