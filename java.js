@@ -37,20 +37,20 @@ function operate(operator, a, b) {
 	switch (operator) {
 		case '+':
 			return add(a, b);
-			case '−':
-				return subtract(a, b);
-				case '×':
-					return multiply(a, b);
-					case '÷':
-						if (b === 0) return "(ಠ_ಠ)";
-						else return divide(a, b);
-						default:
-							return null;
-						}
-					};
-					
-					numberButton.forEach(function(button) {
-						button.addEventListener('click', function() {
+		case '−':
+			return subtract(a, b);
+		case '×':
+			return multiply(a, b);
+		case '÷':
+		if (b === 0) return "(ಠ_ಠ)";
+		else return divide(a, b);
+		default:
+			return null;
+	}
+};
+
+numberButton.forEach(function(button) {
+	button.addEventListener('click', function() {
 		appendNumber(button.textContent)
 	})
 });
@@ -65,7 +65,8 @@ equalButton.addEventListener('click', () => {
 	} else {
 	secondOperand = currentOperationScreen.textContent
 	lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} = `;
-	currentOperationScreen.textContent = `${operate(currentOperation, firstOperand, secondOperand)}`;
+	answer = `${operate(currentOperation, firstOperand, secondOperand)}`;
+	currentOperationScreen.textContent = Math.round(answer * 100) / 100
 	}
 });
 

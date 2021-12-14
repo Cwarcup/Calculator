@@ -13,11 +13,11 @@
 
 # Possible Updates
 
-- String to gether several operations.
 - keyboard support.
 - 'Backspace' button to undo previous action.
 - +/- key added.
 - Exponent buton.
+- Can string to gether several operations.
 
 # Calculator Preview
 
