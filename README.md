@@ -2,7 +2,7 @@
 
 ## [Live Demo](https://cwarcup.github.io/Calculator/) :point_left:
 
-# Funcitons
+# Functions
 
 - Can perform basic calculations such as multiplication, division, addition and subtraction.
 - Clear button will remove previous equation and answers.
